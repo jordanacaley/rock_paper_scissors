@@ -1,1 +1,1 @@
-This Rock Paper Scissors game is built using JavaScript!
+Learning JavaScript with this Rock Paper Scissors game! Thanks to freeCodeCamp tutorial.

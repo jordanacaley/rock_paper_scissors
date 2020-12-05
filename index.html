@@ -1,98 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Page Title</title>
-  <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script>
-    // Possible options for computer to choose //
-    const options = ['Rock', 'Paper', 'Scissors'];
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
 
-    // Computer randomly selects 1 of the options //
-    function computerPlay() {
-        return options[Math.floor(Math.random() * options.length)]
-    }
+    <div class="score-board">
+        <div id="user-label" class="badge">User</div>
+        <div id="computer-label" class="badge">Comp</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
 
-    // Play single round of Rock Paper Scissors //
-    function playRound(playerSelection, computerSelection) {
-        if (computerSelection == 'Paper' && playerSelection.toUpperCase() == 'ROCK') {
-            return 'Computer Wins!';
-        } else if (computerSelection == 'Paper' && playerSelection.toUpperCase() == 'SCISSORS') {
-            return 'Player Wins!';
-        } else if (computerSelection == 'Rock' && playerSelection.toUpperCase() == 'SCISSORS') {
-            return 'Computer Wins!';
-        } else if (computerSelection == 'Rock' && playerSelection.toUpperCase() == 'PAPER') {
-            return 'Player Wins!';
-        } else if (computerSelection == 'Scissors' && playerSelection.toUpperCase() == 'PAPER') {
-            return 'Computer Wins!';
-        } else if (computerSelection == 'Scissors' && playerSelection.toUpperCase() == 'ROCK') {
-            return 'Player Wins!';
-        } else {
-            return "It's a tie!";
-        }
-    }
+    <div class="result">
+        <p>Paper covers rock. You win!</p>
+    </div>
 
-    let player = 0;
-    let computer = 0;
-    const playerSelection = prompt("Enter 'Rock', 'Paper' or 'Scissors' here: ");
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-    if (playRound(playerSelection, computerSelection) == 'Player Wins!') {
-        player++;
-    } else if (playRound(playerSelection, computerSelection) == 'Computer Wins!') {
-        computer++;
-    }
+    <div class="choices">
+        <div class="choice" id="r">
+            <img src="images/rock.png" alt="">
+        </div>
+        <div class="choice" id="p">
+            <img src="images/paper.png" alt="">
+        </div>
+        <div class="choice" id="s">
+            <img src="images/scissors.png" alt="">
+        </div>
+    </div>
 
-    // Best out of 5 //
-    const playerSelection2 = prompt("Enter 'Rock', 'Paper' or 'Scissors' here: ");
-    const computerSelection2 = computerPlay();
-    console.log(playRound(playerSelection2, computerSelection2));
-    if (playRound(playerSelection2, computerSelection2) == 'Player Wins!') {
-        player++;
-    } else if (playRound(playerSelection2, computerSelection2) == 'Computer Wins!') {
-        computer++;
-    }
-
-    const playerSelection3 = prompt("Enter 'Rock', 'Paper' or 'Scissors' here: ");
-    const computerSelection3 = computerPlay();
-    console.log(playRound(playerSelection3, computerSelection3));
-    if (playRound(playerSelection3, computerSelection3) == 'Player Wins!') {
-        player++;
-    } else if (playRound(playerSelection3, computerSelection3) == 'Computer Wins!') {
-        computer++;
-    }
-
-    const playerSelection4 = prompt("Enter 'Rock', 'Paper' or 'Scissors' here: ");
-    const computerSelection4 = computerPlay();
-    console.log(playRound(playerSelection4, computerSelection4));
-    if (playRound(playerSelection4, computerSelection4) == 'Player Wins!') {
-        player++;
-    } else if (playRound(playerSelection4, computerSelection4) == 'Computer Wins!') {
-        computer++;
-    }
-
-    const playerSelection5 = prompt("Enter 'Rock', 'Paper' or 'Scissors' here: ");
-    const computerSelection5 = computerPlay();
-    console.log(playRound(playerSelection5, computerSelection5));
-    if (playRound(playerSelection5, computerSelection5) == 'Player Wins!') {
-        player++;
-    } else if (playRound(playerSelection5, computerSelection5) == 'Computer Wins!') {
-        computer++;
-    }
-    
-    function game(player, computer) {
-        if (player > computer) {
-            return 'Player wins the game!';
-        } else if (computer > player) {
-            return 'Computer wins the game!';
-        } else {
-            return "It's a draw!";
-        }
-    }
-
-    console.log(game(player, computer));
-    
-  </script>
+    <p id="action-message">Make your move.</p>
+    <script src="app.js" charset="UTF-8"></script>
 </body>
 </html>
